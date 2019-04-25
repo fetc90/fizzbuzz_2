@@ -1,6 +1,10 @@
 def fizzbuzz(number)
 
-  divisible = fizzbuzzer(number) || fizz(number) || buzz(number)
+  if fizz(number) == 3 && buzz(number) == 5
+    divisible = 15
+  else
+    divisible = fizz(number) || buzz(number)
+  end
 
   case divisible
   when 5
@@ -15,19 +19,9 @@ def fizzbuzz(number)
 end
 
 def fizz(number)
-  if number % 3 == 0
-    return 3
-  end
+  return 3 if number % 3 == 0
 end
 
 def buzz(number)
-  if number % 5 == 0
-    return 5
-  end
-end
-
-def fizzbuzzer(number)
-  if number % 5 == 0 && number % 3 == 0
-    return 15
-  end
+  return 5 if number % 5 == 0
 end
